@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph Background Color Change</title>
+
+</head>
+
+<body>
+    <style>
+        .bg-color1 {
+            background-color: blue;
+        }
+        
+        .bg-color2 {
+            background-color: pink;
+        }
+        
+        .bg-color3 {
+            background-color: green;
+        }
+        
+        .bg-color4 {
+            background-color: black;
+        }
+        
+        .bg-color5 {
+            background-color: violet;
+        }
+    </style>
+    <div class="container">
+        <p id="para1">This is the first paragraph.</p><button onclick="toggleBackgroundColor('para1','bg-color1')">Blue</button>
+        <p id="para2">This is the second paragraph.</p><button onclick="toggleBackgroundColor('para2','bg-color2')">pink</button>
+        <p id="para3">This is the third paragraph.</p><button onclick="toggleBackgroundColor('para3','bg-color3')">green</button>
+        <p id="para4">This is the fourth paragraph.</p><button onclick="toggleBackgroundColor('para4','bg-color4')">black</button>
+        <p id="para5">This is the fifth paragraph.</p><button onclick="toggleBackgroundColor('para5','bg-color5')">voilet</button></div>
+    <script>
+        function toggleBackgroundColor(paragraphId, colorclass) {
+            const para = document.getElementById(paragraphId);
+            para.classList.toggle(colorclass);
+        }
+    </script>
+</body>
+
+</html>

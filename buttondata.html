@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: black;
+        }
+        
+        .container {
+            border: 2px solid black;
+            display: flex;
+            font-size: 35px;
+            flex-shrink: 30px;
+            padding: 3px;
+            height: 70px;
+            font-weight: bolder;
+            align-items: center;
+            background-color: green;
+            color: yellow;
+        }
+        
+        .one {
+            margin-left: 100px;
+        }
+        
+        .sunny {
+            margin-top: 15px;
+            border: 2px solid black;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            background-color: green;
+        }
+        
+        .ballu {
+            margin-left: 15px;
+        }
+        
+        .jaisal {
+            margin-left: 15px;
+            color: yellow;
+            border: none;
+            background-color: black;
+        }
+        
+        button {
+            margin-left: 15px;
+            background-color: red;
+            color: white;
+            height: 20px;
+            width: 60px;
+        }
+        
+        pre {
+            margin-left: 45px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        
+        marquee {
+            color: white;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="one">
+                Todo List
+            </div>
+    </nav>
+    <marquee behavior="" direction="">Jai Shree Ram</marquee>
+    <div class="sunny">
+        <div class="ballu">
+            <input class="jaisal" type="text" placeholder="type anything">
+        </div>
+        <button class="hul">submit</button>
+    </div>
+    <script>
+        let button = document.querySelector('.hul');
+        let jaisal = document.querySelector('input');
+        console.log(jaisal.value);
+        jaisal.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                if (jaisal.value != '') {
+                    let body = document.querySelector('body');
+                    let d = document.createElement("div");
+                    let g = document.createElement("pre");
+                    body.appendChild(d);
+                    body.appendChild(g);
+                    g.innerText = jaisal.value;
+                    d.appendChild(g);
+                    d.style.backgroundColor = 'green';
+                    let e = document.createElement('button');
+                    let f = document.createElement('button');
+                    body.appendChild(e);
+                    d.appendChild(e);
+                    body.appendChild(f);
+                    e.innerText = "delete";
+                    d.appendChild(f);
+                    f.innerText = "add";
+                    if (jaisal.value != '') {
+                        jaisal.value = '';
+                    }
+                    f.addEventListener("click", () => {
+                        let body = document.querySelector('body');
+                        let d = document.createElement("div");
+                        let g = document.createElement("pre");
+                        body.appendChild(d);
+                        body.appendChild(g);
+                        g.innerText = jaisal.value;
+                        d.appendChild(g);
+                        d.style.backgroundColor = 'green';
+                        let e = document.createElement('button');
+                        let f = document.createElement('button');
+                        body.appendChild(e);
+                        d.appendChild(e);
+                        e.innerText = "delete";
+                        body.appendChild(f);
+                        d.appendChild(f);
+                        f.innerText = "add";
+                    })
+                    d.addEventListener("click", () => {
+                        jai(d);
+                    });
+                }
+            }
+        });
+
+        let jai = (d) => {
+            d.remove();
+        }
+    </script>
+</body>
+
+</html>
